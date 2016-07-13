@@ -1,16 +1,16 @@
 module Data.Cache (
     -- $doc
-    Key,
     module Data.Cache.Map
 ) where
 
 import Data.Cache.Map
-import Data.Key       (Key)
 
 -- $doc
 -- A 'Data.Cache.Base.Cache' is a key-value store with threadsafe access, appending and
 -- deletion.
 --
--- The cache primitives in this module ('Map.fetch' and so on) are
--- re-exported from "Map", to avoid forcing investigative users to
--- accept a 'Data.Hashable.Hashable' constraint or to work only with 'Int' keys.
+-- This module simply re-exports "Data.Cache.Map", to avoid forcing
+-- a 'Data.Hashable.Hashable' constraint or 'Int' keys onto investigative
+-- users. Once you're up-and-running, it is recommended to switch to one of
+-- the specialized containers, as they both have better performance than
+-- 'Data.Map.Map'.
